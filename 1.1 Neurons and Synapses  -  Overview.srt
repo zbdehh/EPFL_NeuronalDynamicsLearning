@@ -1,0 +1,955 @@
+﻿1
+00:00:05,000 --> 00:00:08,029
+welcome to the class on neural dynamics
+欢迎来到神经动力学课程
+
+2
+00:00:08,029 --> 00:00:10,798
+neural dynamics is part of the larger
+神经动力学属于计算机神经科学
+
+3
+00:00:10,798 --> 00:00:13,009
+field of computational neuroscience
+领域的一部分
+
+4
+00:00:13,009 --> 00:00:16,170
+computational neuroscience works on a
+计算神经科学的工作原理基于
+
+5
+00:00:16,170 --> 00:00:19,230
+theoretical description of the brain 
+ 我们的大脑的理论研究
+
+6
+00:00:19,230 --> 00:00:23,028
+our brain is organized in different areas
+大脑组织在不同的领域
+
+7
+00:00:23,028 --> 00:00:26,099
+there is an area involved in visual
+其中有一个区域进行视觉的
+
+8
+00:00:26,099 --> 00:00:28,230
+information processing called the visual cortex 
+信息处理，这就被叫做视觉皮质
+
+9
+00:00:28,230 --> 00:00:31,890
+imagine that you are riding a bicycle 
+ 皮质层想象你正骑着自行车
+
+10
+00:00:31,890 --> 00:00:34,079
+and in a certain distance you
+然后看见距离你一定距离的
+
+11
+00:00:34,079 --> 00:00:36,170
+see a light switching from red to green
+灯光从红色变为绿色
+
+12
+00:00:36,170 --> 00:00:39,030
+the information about the change of light color
+这些相关的颜色变化
+
+13
+00:00:39,030 --> 00:00:41,039
+will enter through your eye
+会透过你的眼睛进入
+
+14
+00:00:41,039 --> 00:00:44,759
+and go to visual cortex 
+然后到达你的视觉皮层。
+
+15
+00:00:44,759 --> 00:00:47,878
+now you have to decide whether you want to speed up
+现在你必须决定是否需要进行加速
+
+16
+00:00:47,878 --> 00:00:49,619
+or whether you say well it's not worth
+或者你觉得这不需要加速。这不值得这样做
+
+17
+00:00:49,619 --> 00:00:51,799
+doing it I'm not going to make it and
+我可以不需要进行加速
+
+18
+00:00:51,799 --> 00:00:55,710
+you continue just as normal
+你继续像往常一样
+
+19
+00:00:55,710 --> 00:00:57,600
+while you make your decision different areas of
+当你做决定时，大脑的不同区域
+
+20
+00:00:57,600 --> 00:01:00,000
+the brain are involved
+ 都参与进来了
+
+21
+00:01:00,000 --> 00:01:03,268
+ finally you decide I want to speed up your motor
+最后你决定我需要去加速
+
+22
+00:01:03,268 --> 00:01:06,060
+cortex sends out a command and your legs move faster 
+大脑皮质发出命令然后你的腿比之前移动的更快了。
+
+23
+00:01:06,060 --> 00:01:11,009
+the description on the level
+关于不同脑误差水平
+
+24
+00:01:11,009 --> 00:01:13,290
+of different brain errors is a rather
+的描述是本课程的一个
+
+25
+00:01:13,290 --> 00:01:16,469
+cause description 
+非常重要的描述
+
+26
+00:01:16,469 --> 00:01:19,259
+in this class we will take a different approach 
+在本课程中，我们将采用不同的方法
+
+27
+00:01:19,259 --> 00:01:23,159
+we will focus on one small cubic millimeter say of brain area 
+我们将集中讨论大脑的一小块区域
+
+28
+00:01:23,159 --> 00:01:27,090
+and this like little area of a cubic millimeter
+就像这个块区域一样 约一立方毫米，
+
+29
+00:01:27,090 --> 00:01:30,299
+ you'll find 10,000 cells 
+ 你会发现10,000个细胞
+
+30
+00:01:30,299 --> 00:01:33,688
+or so and these cells form an integrated network 
+和这些细胞形成一个网络
+
+31
+00:01:33,688 --> 00:01:37,468
+the cells involved in information 
+这些在大脑中
+
+32
+00:01:37,468 --> 00:01:39,180
+processing in the brain are
+ 涉及到信息处理的细胞
+
+33
+00:01:39,180 --> 00:01:42,569
+called the neurons 
+称为神经元
+
+34
+00:01:42,569 --> 00:01:45,118
+neurons have different parts 
+神经元拥有不同的部分
+
+35
+00:01:45,118 --> 00:01:48,328
+there's a part called the dendrite 
+这一部分被称为树突(dendrite),
+
+36
+00:01:48,328 --> 00:01:52,769
+this is where information from other neurons will arrive
+其他神经元的信息从这里到达
+
+37
+00:01:52,769 --> 00:01:55,920
+the soma is where the new one decides whether
+这个胞体(soma)会做出新的决定
+
+38
+00:01:55,920 --> 00:01:58,259
+it's going to send out a signal or not
+它会发出信号或者不发出
+
+39
+00:01:58,259 --> 00:02:01,560
+and then this signal travels along the
+然后这个信号沿着
+
+40
+00:02:01,560 --> 00:02:07,858
+axon to other neurons 
+ 轴突到其他神经元
+
+41
+00:02:07,858 --> 00:02:10,770
+each neuron makes contacts to thousands of other neurons
+每个神经元与数以千计的其他神经元接触
+
+42
+00:02:10,770 --> 00:02:12,840
+the contact points are called the synapses
+这些接触点称为突触(synapses)
+
+43
+00:02:12,840 --> 00:02:18,490
+ so the axon will branch out 
+所以轴突(axon)将信号分散出来
+
+44
+00:02:18,490 --> 00:02:21,150
+and make different ramifications 
+产生出不同的结果
+
+45
+00:02:21,150 --> 00:02:24,449
+and therefore we have not just the cells with a cell body
+因此这我们不仅有细胞体的细胞
+
+46
+00:02:24,449 --> 00:02:27,759
+ but we have a lot of wire 
+而且我们有很多相连的线
+
+47
+00:02:27,759 --> 00:02:32,830
+in fact in each small area of or
+事实上，在每个小区域或
+
+48
+00:02:32,830 --> 00:02:36,669
+small volume of one millimeter cube 
+ 1毫米立方体的体积小，
+
+49
+00:02:36,669 --> 00:02:38,500
+you will have about 10,000 neurons and
+你可以找到大约10,000个神经元和
+
+50
+00:02:38,500 --> 00:02:43,659
+several kilometers of wires 
+ 几公里的电线
+
+51
+00:02:43,659 --> 00:02:47,319
+what you see here on the left hand side is a drawing of harmonica 
+你看到左边的线状图
+
+52
+00:02:47,319 --> 00:02:51,340
+how we did this kind of
+我们如何在100年前
+
+53
+00:02:51,340 --> 00:02:54,939
+drawing over 100 years ago 
+就可以画出这副图
+
+54
+00:02:54,939 --> 00:02:57,689
+and this gives a glimpse of the integral Network that those neurons form 
+这让我们看到了这些神经元形成的完整网络
+
+55
+00:02:57,689 --> 00:03:01,900
+however only a glimpse 
+虽然只是粗略的
+
+56
+00:03:01,900 --> 00:03:03,400
+and it's still a simplification
+它仍然是一个简化
+
+57
+00:03:03,400 --> 00:03:06,099
+because wherever you see empty space here 
+因为无论你在哪里看到空的地方
+
+58
+00:03:06,099 --> 00:03:08,729
+in fact there would be other cells
+实际上这里会有其他细胞
+
+59
+00:03:08,729 --> 00:03:11,530
+there would be other neurons 
+会有其他的神经元存在
+
+60
+00:03:11,530 --> 00:03:15,310
+there would be more material in the end 
+最终会有更多的物质
+
+61
+00:03:15,310 --> 00:03:18,330
+the brain consists of a fairly densely packed material
+大脑由一个相当密集物质的组成
+
+62
+00:03:18,330 --> 00:03:23,650
+neurons synapses wires is everywhere 
+神经元突触无处不在
+
+63
+00:03:23,650 --> 00:03:27,669
+now I mentioned already that
+到处都是我已经提到过的
+
+64
+00:03:27,669 --> 00:03:31,240
+these neurons send out signals 
+ 这些神经元发出信号
+
+65
+00:03:31,240 --> 00:03:34,719
+the signal consists of a short electrical pulse
+信号由短的电学脉冲组成
+
+66
+00:03:34,719 --> 00:03:37,449
+ called an action potential or spike 
+被称为动作电位或脉冲
+
+67
+00:03:37,449 --> 00:03:41,409
+an action  potential has a duration of a few milliseconds 
+动作电位有几毫秒的持续时间
+
+68
+00:03:41,409 --> 00:03:45,580
+and it has an
+它的幅度约为
+
+69
+00:03:45,580 --> 00:03:49,330
+amplitude of about 100 millivolt
+100毫伏
+
+70
+00:03:49,330 --> 00:03:51,759
+it's netic electrical signal
+ 这是NETIC电信号
+71
+00:03:51,759 --> 00:03:54,669
+it's an electrical pulse one may ask the question 
+电脉冲可能会问这种问题
+
+72
+00:03:54,669 --> 00:03:57,580
+how this kind of pulse 
+这种脉冲是怎么回事
+
+73
+00:03:57,580 --> 00:04:01,259
+how thiskind of electrical signal is generated
+这些电学信号是怎么产生的
+
+74
+00:04:01,259 --> 00:04:05,169
+just as any other cell 
+就像任何其他细胞
+
+75
+00:04:05,169 --> 00:04:08,560
+neurons are surrounded by a cell membrane 
+神经元被细胞膜所包围
+
+76
+00:04:08,560 --> 00:04:11,319
+in the cell membrane you will find pores 
+在细胞膜上，你会发现这些毛孔
+
+77
+00:04:11,319 --> 00:04:15,460
+these pores can open and close 
+这些毛孔可以打开和关闭，
+
+78
+00:04:15,460 --> 00:04:19,660
+and while the pores are open ions can flow in an area of the cell
+毛孔是开放的通道，离子可以在一个区域内流动
+
+79
+00:04:19,660 --> 00:04:22,029
+these ions carry an electrical
+这些离子携带电子
+
+80
+00:04:22,029 --> 00:04:25,300
+charge and contribute to the
+改变和有助于
+
+81
+00:04:25,300 --> 00:04:27,730
+generation of this electrical pulse of
+产生动做电位的
+
+82
+00:04:27,730 --> 00:04:30,420
+the action potential
+电脉冲
+
+83
+00:04:30,420 --> 00:04:34,079
+next week we will develop models 
+下周我们将讨论这种模型
+
+84
+00:04:34,079 --> 00:04:37,560
+we will talk about models of this biophysical
+谈谈这种生物物理学的模型
+
+85
+00:04:37,560 --> 00:04:41,189
+interaction of ions molecules
+离子分子与这些的相互作用
+
+86
+00:04:41,189 --> 00:04:43,560
+and these models are called hodgkin-huxley type models 
+这种模型被称为hodgkin-huxley类模型
+
+87
+00:04:43,560 --> 00:04:47,189
+or biophysical models preferring
+或说是生物物理模型
+
+88
+00:04:47,189 --> 00:04:49,980
+hodgkin-huxley who got a Nobel Prize
+hodgkin-huxley得到了诺贝尔奖
+
+89
+00:04:49,980 --> 00:04:52,170
+ for developing the first mathematical
+因为发现了第一个关于神经元信号
+
+90
+00:04:52,170 --> 00:04:54,540
+description on the level of molecules of
+在分子水平的
+
+91
+00:04:54,540 --> 00:04:59,430
+the neuronal signals 
+数学模型
+
+92
+00:04:59,430 --> 00:05:02,100
+now these models are rather complicated 
+现在 这个模型相当复杂
+
+93
+00:05:02,100 --> 00:05:08,430
+they discard the biophysics 
+他们放弃了生物物理学
+
+94
+00:05:08,430 --> 00:05:11,670
+in the week after week two we will try to reduce the complexity of the description 
+在第二周，我们将减少这个模型的复杂度
+
+95
+00:05:11,670 --> 00:05:13,139
+and we'll talk about
+我们将谈论
+
+96
+00:05:13,139 --> 00:05:16,730
+simplified model types 
+简化的模型类型
+
+97
+00:05:16,730 --> 00:05:20,939
+now particularly simple model is a model where we say
+ 简单模型是我们所说的模型
+
+98
+00:05:20,939 --> 00:05:23,370
+well we don't really care about the
+好，我们真的不关心
+
+99
+00:05:23,370 --> 00:05:25,829
+biophysical mechanisms
+ 生物物理机制
+
+100
+00:05:25,829 --> 00:05:28,470
+that contribute to the formation of an action potential
+ 导致动作电位的形成
+
+101
+00:05:28,470 --> 00:05:30,990
+we just describe the action potential as
+我们只是将动作电位描述为
+
+102
+00:05:30,990 --> 00:05:35,220
+a pulse a standard pulse 
+一个脉冲标准脉冲
+
+103
+00:05:35,220 --> 00:05:38,459
+so suppose a pulse arrives from a presynaptic neuron from a sending neuron 
+所以假设脉冲来自发送神经元的突触前神经元
+
+104
+00:05:38,459 --> 00:05:41,490
+it arrives 
+这个脉冲到达
+
+105
+00:05:41,490 --> 00:05:44,610
+it goes over the synapse 
+越过了突触
+
+106
+00:05:44,610 --> 00:05:48,420
+and it causes a response on the postsynaptic side 
+它会引起突触后的反应
+
+107
+00:05:48,420 --> 00:05:50,699
+on the side of the receiving neuron 
+在接受神经元的这一侧
+
+108
+00:05:50,699 --> 00:05:52,939
+the postsynaptic neuron is the neuron receiving the signal 
+突触后神经元是接收穿过
+
+109
+00:05:52,939 --> 00:05:55,860
+that goes across
+突触的接触点的信号
+
+110
+00:05:55,860 --> 00:05:59,310
+the contact point across the synapse 
+的神经元
+111
+00:05:59,310 --> 00:06:02,370
+so this input pulse here will cause 
+此输入脉冲将导致
+
+112
+00:06:02,370 --> 00:06:05,939
+this response over there 
+此处的响应
+
+113
+00:06:05,939 --> 00:06:09,000
+now this new one will receive not just one input 
+现在这里不仅会收到一个新的输入
+
+114
+00:06:09,000 --> 00:06:11,250
+but it will receive input pulses from many
+而且将接收来自许多不同神经元
+
+115
+00:06:11,250 --> 00:06:14,370
+different neurons 
+的输入脉冲，
+
+116
+00:06:14,370 --> 00:06:16,889
+suppose many different pulses arrive 
+假设许多不同脉冲到达
+
+117
+00:06:16,889 --> 00:06:19,290
+then the effects of all these different pulses will be added up
+这些影响和全部不同的脉冲将被叠加起来
+
+118
+00:06:19,290 --> 00:06:23,850
+so this describes how different incoming
+所以这描述了不同的输入
+
+119
+00:06:23,850 --> 00:06:28,110
+pulses are transformed into a response of the receiving cell t
+脉冲转化为接收单元的响应
+
+120
+00:06:28,110 --> 00:06:31,139
+his response is
+它的回应
+
+121
+00:06:31,139 --> 00:06:34,259
+called the postsynaptic potential
+ 被称为突触后电位
+
+122
+00:06:34,259 --> 00:06:36,449
+but this does not yet tell us what makes
+但是这还没告诉我们是什么导致这些
+
+123
+00:06:36,449 --> 00:06:40,259
+this cell here decide but they will send
+这个细胞在这里决定， 但他们会
+
+124
+00:06:40,259 --> 00:06:42,050
+out a signal itself or not
+发送出信号本身或者会不发送信号
+
+125
+00:06:42,050 --> 00:06:44,350
+now the formation of a pulse
+现在在这个模型中
+
+126
+00:06:44,350 --> 00:06:47,860
+is triggered in this model 
+触发了一个脉冲
+
+127
+00:06:47,860 --> 00:06:50,139
+if this membrane potential 
+这种膜电位 
+128
+00:06:50,139 --> 00:06:53,319
+if this postsynaptic potential reaches a value theta a threshold value 
+如果突触后电位达到阈值Theta，
+
+129
+00:06:53,319 --> 00:06:56,980
+at this point a spike is
+此时的阈值是尖峰
+
+130
+00:06:56,980 --> 00:06:59,379
+triggered and exponentially sent out
+触发并发送了信号
+
+131
+00:06:59,379 --> 00:07:01,959
+and afterwards we have some reset of the
+之后膜电位进入的到了
+
+132
+00:07:01,959 --> 00:07:06,189
+membrane potential to a low value 
+一个比较低的值静息电位
+
+133
+00:07:06,189 --> 00:07:08,319
+so this kind of model which are called
+因此这种模型被称为
+
+134
+00:07:08,319 --> 00:07:11,829
+indicating fire model 
+ IF模型
+
+135
+00:07:11,829 --> 00:07:15,550
+in this kind of models spikes are formal events
+在这种模型中，峰值是正式时间
+
+136
+00:07:15,550 --> 00:07:17,589
+they are triggered at the moment 
+峰值产生当
+
+137
+00:07:17,589 --> 00:07:19,959
+when the membrane potential crosses the threshold
+ 膜电位超过阈值时
+
+138
+00:07:19,959 --> 00:07:23,110
+and then a spike is sent out 
+ 然后发出一个尖峰
+
+139
+00:07:23,110 --> 00:07:25,089
+and after the spike there's some reset 
+ 然后尖峰会下降和上升
+
+140
+00:07:25,089 --> 00:07:28,899
+and refract on us a simple version of this model
+这个模型的简单版本
+
+141
+00:07:28,899 --> 00:07:31,990
+will be the topic for today 
+将是今天的主题
+
+142
+00:07:31,990 --> 00:07:34,120
+and it will come back to this model 
+ 回到这个模型
+
+143
+00:07:34,120 --> 00:07:38,050
+towards the end of this series of lectures  
+ 在这一系列课程结束时
+
+144
+00:07:38,050 --> 00:07:42,329
+suppose now we have this kind of model 
+现在假设我们有这种模型
+
+145
+00:07:42,329 --> 00:07:45,339
+and our noon receives many many spikes from other
+从其他神经元收到很多脉冲
+
+146
+00:07:45,339 --> 00:07:48,670
+neurons to make things simple 
+做一下假设来进行简化
+
+147
+00:07:48,670 --> 00:07:52,029
+we assume that spike arrival is random 
+我们假设这个脉冲是随机的
+
+148
+00:07:52,029 --> 00:07:56,439
+as a result of this the potential will fluctuate as
+因此，电位将作为时间的函数而改变
+149
+00:07:56,439 --> 00:08:00,430
+a function of time and only
+仅仅与时间相关
+
+150
+00:08:00,430 --> 00:08:04,600
+occasionally a spike is send out 
+只是偶尔发出一个尖峰，
+
+151
+00:08:04,600 --> 00:08:08,550
+so spikes are rather rare events trigger that a threshold
+所以尖峰是一个触发到阈值产生的事件
+
+152
+00:08:08,550 --> 00:08:11,649
+below the threshold in the regime which
+下面在政权阈值，其
+
+153
+00:08:11,649 --> 00:08:14,350
+is called sub threshold regime 
+ 这被称为阈值机制
+
+154
+00:08:14,350 --> 00:08:16,540
+what we observe and the random spike arrival is
+我们观察脉冲随机到达
+
+155
+00:08:16,540 --> 00:08:19,410
+a fluctuating membrane potential and
+一个波动的膜电位和
+
+156
+00:08:19,410 --> 00:08:24,220
+this is reminiscent of what one finds if
+这让人想起如果发现了什么
+
+157
+00:08:24,220 --> 00:08:27,399
+neural activity is recorded with an
+神经活动记录与
+
+158
+00:08:27,399 --> 00:08:30,970
+electrode in an egg Mouse for example
+ 例如 ，鸡蛋中的电极
+
+159
+00:08:30,970 --> 00:08:33,519
+you see these fluctuations of the
+你看到的这些波动
+
+160
+00:08:33,519 --> 00:08:35,889
+membrane potential and spikes are rare
+ 膜电位和尖峰非常稀少
+
+161
+00:08:35,889 --> 00:08:38,440
+events from time to time a spike is sent out 
+ 事件不时发送尖峰
+
+162
+00:08:38,440 --> 00:08:44,049
+so in lectures in week five and six
+因此在第五周和第六周的讲座
+
+163
+00:08:44,049 --> 00:08:46,240
+the last questions what do these
+解决这个问题
+
+164
+00:08:46,240 --> 00:08:50,409
+fluctuations means is this noise what's
+波动意味着这是什么噪音
+
+165
+00:08:50,409 --> 00:08:52,110
+the meaning of these action potentials
+ 这些动作电位的意义
+
+166
+00:08:52,110 --> 00:08:54,490
+what's the information transmitted by
+ 什么是传输的信息
+
+167
+00:08:54,490 --> 00:08:59,580
+the neuron what is the neural code
+ 神经元是什么神经代码
+
+168
+00:08:59,580 --> 00:09:03,879
+so overall I will present this week a
+总的来说， 我将在本周提出一个
+
+169
+00:09:03,879 --> 00:09:08,139
+first simplified model of a neuron 
+第一个简化的神经元模型
+
+170
+00:09:08,139 --> 00:09:10,570
+then in the next week we will go on to
+在接下来的一周，我们将继续
+
+171
+00:09:10,570 --> 00:09:14,528
+hodgkin-huxley models 
+讲解hodgkin-huxley模型
+
+172
+00:09:14,528 --> 00:09:17,679
+simplify and reduce to what's called a feature Nagumo model 
+然后 我们将其简化并缩减为所谓的nagumo模型
+173
+00:09:17,679 --> 00:09:19,360
+we will talk about the dendrite 
+我们将谈论树突
+
+174
+00:09:19,360 --> 00:09:21,309
+we will talk about neural coding 
+我们将谈论神经元编码
+
+175
+00:09:21,309 --> 00:09:23,440
+we'll talk about the question of noise 
+我们将谈论的噪声的问题
+
+176
+00:09:23,440 --> 00:09:26,230
+about the question of what is the
+还有关于
+
+177
+00:09:26,230 --> 00:09:28,450
+information processed and transmitted by an urn 
+信息是怎么处理和传输的问题
+
+178
+00:09:28,450 --> 00:09:31,809
+and in week seven in a final lecture 
+在最后的第七周课程
+
+179
+00:09:31,809 --> 00:09:33,850
+I will put these different
+讲座我会把这些不同
+
+180
+00:09:33,850 --> 00:09:36,639
+things together and show how to extract
+事情集中在一起，并展示如何提取
+
+181
+00:09:36,639 --> 00:09:39,970
+from neural data a model of a neuron
+ 来自神经数据的神经元模型
+
+182
+00:09:39,970 --> 00:09:42,850
+which is able to describe neural
+这能够描述神经
+
+183
+00:09:42,850 --> 00:09:45,190
+information processing to describe to
+ 要描述的信息处理
+
+184
+00:09:45,190 --> 00:09:47,379
+transform implant incoming signal input into output spikes 
+变换植入输入信号输入输出
+
+185
+00:09:47,379 --> 00:09:50,470
+and therefore shed
+因此脱落
+
+186
+00:09:50,470 --> 00:09:52,929
+light on the questions of coding and decoding
+关于编码和解码的问题
+
+187
+00:09:52,929 --> 00:09:58,600
+after this short introduction
+在这个简短的介绍后
+
+188
+00:09:58,600 --> 00:10:01,958
+I would now like you to do a first little exercise 
+ 现在想要你先做一点联系
+
+189
+00:10:01,958 --> 00:10:03,850
+please take two or three minutes
+花费两到三分钟
+
+190
+00:10:03,850 --> 00:10:06,278
+and answer the following questions 
+并回答以下问题
+
+191
+00:10:06,278 --> 00:10:08,860
+and then I will continue with
+然后我会继续讲解
+
+192
+00:10:08,860 --> 00:10:10,474
+a first model
+第一个模型
+
