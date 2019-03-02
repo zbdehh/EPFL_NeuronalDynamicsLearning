@@ -1,0 +1,2 @@
+# EPFL_NeuronDynamicsLearning
+想学习脉冲神经网络，先看看神经动力学的视频，准备翻译一下
